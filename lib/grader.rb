@@ -90,5 +90,5 @@ finish_time = Time.now
 
 puts %{
 ================================================================================
- Finished Grading #{team_members.lenght} assignments in #{finish_time - start_time} second(s)
+ Finished Grading #{team_members.length} assignments in #{finish_time - start_time} second(s)
 ================================================================================}
