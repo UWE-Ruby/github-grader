@@ -2,6 +2,18 @@
 
 This tool will download a specified repository for an organization's team and run the tests to ensure that all the assignments have been started and completed.
 
+## Execution
+
+```
+rake
+```
+
+The tool will prompt you for your github username and password so that it can get the list of the individuals in the UWE-Ruby course. 
+
+Then you need to specify the assignment that you want to grade. Essentially specially the repo `week-01`, `week-02`. At that point it will quickly move through all the participants on the Fall Team cloning their repos and executing the tests.
+
+### Notes
+
 ## Assumptions
 
 * Currently this is hard-coded specifically to the fall class of the UWE-Ruby
