@@ -31,7 +31,7 @@ def test(location)
   cwd = Dir.getwd
   Dir.chdir location
   system "rspec spec -c"
-  result = $?
+  result = $?.exitstatus == 0
   say "The test results for #{location} is [#{result}]"
   
   Dir.chdir cwd
