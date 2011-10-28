@@ -62,4 +62,5 @@ else
 ================================================================================
 #{member} has not started the assignment #{assignment}
 ================================================================================}
+  system "touch #{member}-#{assignment}-missing"
 end
