@@ -69,20 +69,6 @@ end
 
 team_members.each do |member|
   
-  if member_assigment = retrieve_the_assignment(member,assignment)
-    
-    downloaded_assignment = download member_assigment
-    prepare downloaded_assignment
-    
-    if test downloaded_assignment
-      cleanup downloaded_assignment
-    else
-      say %{
-================================================================================
- #{member} has failing tests please check their assignment #{assignment}
-================================================================================
-      }
-    end
-  end
+  system "ruby lib/assistant.rb #{member.login} #{assignment}"
   
 end
