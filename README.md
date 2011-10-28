@@ -12,6 +12,7 @@ This tool will download a specified repository for an organization's team and ru
 
 ## Limitations
 
+* Login is required to get a list of the participants
 * Does not generate any documentation about the execution.
 * Purposefully leaves folders around of the students that have not finished their work for this documentation
 * Github names are not mapped to the student's email / names in the classroom

@@ -21,8 +21,6 @@ def prepare(location)
   say "Preparing #{location}"
   cwd = Dir.getwd
   Dir.chdir location
-  system "rm Gemfile.lock"
-  system "bundle"
   Dir.chdir cwd
 end
 
