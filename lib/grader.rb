@@ -64,7 +64,7 @@ end
 
 def cleanup(location)
   say "Cleaning #{location}"
-  puts "rm -rf #{location}"
+  system "rm -rf #{location}"
 end
 
 team_members.each do |member|
