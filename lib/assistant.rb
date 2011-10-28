@@ -30,8 +30,8 @@ def test(location)
   say "Testing #{location}"
   cwd = Dir.getwd
   Dir.chdir location
-  result = system "rspec spec -c"
-  
+  system "rspec spec -c"
+  result = $?
   say "The test results for #{location} is [#{result}]"
   
   Dir.chdir cwd
