@@ -67,8 +67,28 @@ def cleanup(location)
   system "rm -rf #{location}"
 end
 
+
+MAX_CHILD_PIDS = 4
+child_pids = []
+
+start_time = Time.now
+
 team_members.each do |member|
   
-  system "ruby lib/assistant.rb #{member.login} #{assignment}"
+  if child_pids.length < MAX_CHILD_PIDS
+    child_pids << fork { exec "ruby lib/assistant.rb #{member.login} #{assignment}" }
+  else
+    child_pids.delete Process.wait
+  end
   
 end
+
+
+Process.waitall
+
+finish_time = Time.now
+
+puts %{
+================================================================================
+ Finished Grading #{team_members.lenght} assignments in #{finish_time - start_time} second(s)
+================================================================================}
